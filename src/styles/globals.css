@@ -1,0 +1,225 @@
+
+/* Admin Dashboard Styles */
+.admin-dashboard-container {
+  @apply min-h-screen bg-gradient-to-b from-black to-gray-900 text-white;
+}
+
+.admin-dashboard-header {
+  @apply flex justify-between items-center mb-8 pb-4 border-b border-white/10;
+}
+
+.admin-dashboard-title {
+  @apply text-3xl font-bold text-white;
+  text-shadow: 0 0 20px rgba(217, 70, 239, 0.4);
+}
+
+.admin-tabs-header {
+  @apply flex overflow-x-auto mb-8 bg-black/30 rounded-full p-1.5 border border-white/10 backdrop-blur-sm;
+}
+
+.admin-tabs-trigger {
+  @apply px-5 py-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200 whitespace-nowrap;
+}
+
+.admin-tabs-trigger[data-state="active"] {
+  @apply bg-[#D946EF] text-white font-medium;
+}
+
+.admin-card {
+  @apply bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden shadow-xl hover:shadow-[#D946EF]/5 transition-all duration-300 mb-6;
+}
+
+.admin-card-header {
+  @apply p-4 border-b border-white/10 bg-gradient-to-r from-[#D946EF]/20 to-transparent;
+}
+
+.admin-card-content {
+  @apply p-6;
+}
+
+.admin-card-title {
+  @apply text-xl font-bold text-white flex items-center gap-2;
+}
+
+.admin-card-subtitle {
+  @apply text-sm text-gray-400;
+}
+
+/* Admin Form Styles - Queste classi saranno sostituite da shadcn/ui */
+.admin-form-legacy label {
+  @apply block text-sm font-medium mb-2 text-gray-300;
+}
+
+.admin-form-legacy input,
+.admin-form-legacy textarea,
+.admin-form-legacy select {
+  @apply w-full p-3 bg-black/60 border border-white/10 rounded-md text-white placeholder-gray-500 shadow-inner shadow-black/20
+  focus:outline-none focus:ring-2 focus:ring-[#D946EF] focus:ring-opacity-50 focus:border-transparent
+  hover:border-white/20 transition-all duration-200;
+}
+
+.admin-tag {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.admin-table {
+  @apply min-w-full divide-y divide-gray-800;
+}
+
+.admin-table-header {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider;
+}
+
+.admin-table-cell {
+  @apply px-6 py-4 whitespace-nowrap text-white;
+}
+
+.member-card {
+  @apply bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden shadow-lg hover:shadow-[#D946EF]/10 transition-all duration-300;
+}
+
+.member-name {
+  @apply text-xl font-bold text-white mb-1;
+}
+
+.member-role {
+  @apply text-[#D946EF] text-sm mb-2;
+}
+
+.member-meta {
+  @apply text-xs text-gray-400 mb-3;
+}
+
+.member-achievements {
+  @apply space-y-1 text-sm;
+}
+
+.admin-action-button {
+  @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200;
+}
+
+.admin-button-primary {
+  @apply bg-[#D946EF] hover:bg-[#D946EF]/90 text-white;
+}
+
+.admin-button-secondary {
+  @apply bg-white/10 hover:bg-white/15 text-white;
+}
+
+.admin-button-danger {
+  @apply bg-red-500/80 hover:bg-red-500/90 text-white;
+}
+
+.admin-avatar {
+  @apply w-24 h-24 object-cover rounded-lg border-2 border-[#D946EF]/30 shadow-lg;
+}
+
+/* Status badges */
+.status-badge {
+  @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium;
+}
+
+.status-active {
+  @apply bg-green-500/20 text-green-300 border border-green-500/30;
+}
+
+.status-inactive {
+  @apply bg-red-500/20 text-red-300 border border-red-500/30;
+}
+
+.status-pending {
+  @apply bg-yellow-500/20 text-yellow-300 border border-yellow-500/30;
+}
+
+.add-button {
+  @apply inline-flex items-center gap-2 px-4 py-2 bg-[#D946EF] hover:bg-[#D946EF]/90 text-white rounded-full font-medium shadow-lg hover:shadow-[#D946EF]/20 transition-all duration-200;
+}
+
+.edit-button {
+  @apply flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium bg-white/10 hover:bg-white/15 text-white transition-all duration-200;
+}
+
+.delete-button {
+  @apply flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium bg-red-500/70 hover:bg-red-500/80 text-white transition-all duration-200;
+}
+
+.navbar a,
+.navbar button,
+.navbar-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Form Styles */
+.form-group {
+  @apply space-y-1.5 mb-4;
+}
+
+.form-label {
+  @apply text-sm font-medium text-gray-300;
+}
+
+.form-hint {
+  @apply text-xs text-gray-500 mt-1;
+}
+
+/* Enhanced Input Fields - Da usare solo come fallback */
+.enhanced-input {
+  @apply bg-black/60 border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-gray-500 
+  focus:border-[#D946EF]/50 focus:ring-2 focus:ring-[#D946EF]/30 focus:outline-none transition-all duration-200
+  hover:border-white/20 shadow-inner shadow-black/20;
+}
+
+.enhanced-textarea {
+  @apply bg-black/60 border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-gray-500 
+  focus:border-[#D946EF]/50 focus:ring-2 focus:ring-[#D946EF]/30 focus:outline-none transition-all duration-200
+  hover:border-white/20 min-h-[120px] resize-y shadow-inner shadow-black/20;
+}
+
+/* Nuovi stili per form moderni */
+.modern-form-container {
+  @apply rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm shadow-xl p-6;
+}
+
+.modern-form-title {
+  @apply text-xl font-bold text-white mb-6 pb-4 border-b border-white/10;
+}
+
+.modern-form-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-5;
+}
+
+.modern-form-group {
+  @apply mb-5;
+}
+
+.modern-form-label {
+  @apply block text-sm font-medium text-gray-300 mb-1.5 flex items-center gap-1.5;
+}
+
+.modern-form-input {
+  @apply w-full h-10 px-4 py-2 rounded-md border border-white/10 bg-black/60 text-white placeholder:text-gray-500
+  focus:border-[#D946EF]/50 focus:ring-2 focus:ring-[#D946EF]/30 focus:outline-none 
+  transition-all duration-200 hover:border-white/20 shadow-inner shadow-black/20;
+}
+
+.modern-form-textarea {
+  @apply w-full min-h-[120px] px-4 py-3 rounded-md border border-white/10 bg-black/60 text-white placeholder:text-gray-500
+  focus:border-[#D946EF]/50 focus:ring-2 focus:ring-[#D946EF]/30 focus:outline-none
+  transition-all duration-200 hover:border-white/20 shadow-inner shadow-black/20 resize-y;
+}
+
+.modern-form-button {
+  @apply w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#D946EF] hover:bg-[#D946EF]/90 text-white
+  rounded-lg font-medium shadow-lg shadow-[#D946EF]/20 transition-all duration-200 
+  hover:shadow-xl hover:shadow-[#D946EF]/30;
+}
+
+.modern-form-error {
+  @apply text-red-400 text-xs mt-1;
+}
+
+/* Loader spinner */
+.spinner {
+  @apply animate-spin rounded-full border-t-2 border-b-2 border-white h-4 w-4 inline-block;
+}
