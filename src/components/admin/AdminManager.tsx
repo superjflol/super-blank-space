@@ -45,22 +45,34 @@ const AdminManager = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data, error } = await supabase.auth.admin.listUsers();
+      // Use the authenticated_users_view instead of the admin API
+      const { data, error } = await supabase
+        .from('authenticated_users_view')
+        .select('*');
+
+      if (error) throw error;
       
-      if (error) {
-        if (user) {
-          setUsers([{
-            id: user.id,
-            email: user.email,
-            created_at: user.created_at,
-          }]);
-        }
-        return;
+      // If we got data, use it, otherwise fall back to at least showing the current user
+      if (data && data.length > 0) {
+        setUsers(data);
+      } else if (user) {
+        // If no data but we have the current user, at least show them
+        setUsers([{
+          id: user.id,
+          email: user.email,
+          created_at: user.created_at,
+        }]);
       }
-      
-      setUsers(data?.users || []);
     } catch (error) {
       console.error("Error fetching users:", error);
+      // If fetching fails, at least show the current user
+      if (user) {
+        setUsers([{
+          id: user.id,
+          email: user.email,
+          created_at: user.created_at,
+        }]);
+      }
     }
   };
 
