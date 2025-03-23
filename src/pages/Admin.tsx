@@ -97,7 +97,15 @@ const Admin = () => {
           <div className="text-center text-white bg-black/40 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-xl">
             <h1 className="text-2xl font-bold mb-4">Access Denied</h1>
             <p className="mb-6">You do not have permission to access this area.</p>
-            <Button onClick={() => navigate("/")} className="bg-[#D946EF] hover:bg-[#D946EF]/90">Return to Home</Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button onClick={handleLogout} className="bg-red-600 hover:bg-red-700">
+                <LogOut size={16} className="mr-2" />
+                Logout
+              </Button>
+              <Button onClick={() => navigate("/")} className="bg-[#D946EF] hover:bg-[#D946EF]/90">
+                Return to Home
+              </Button>
+            </div>
           </div>
         </div>
       </>
